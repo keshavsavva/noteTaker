@@ -43,8 +43,9 @@ app.post("/api/notes", (req,res)=>{
 
   app.delete("/api/notes/:id", (req, res)=> {
     const id = req.params.id;
+    console.log(`Selected note ${id}`);
     notes.forEach((item, index) => {
-      if(id === item.id) {
+      if(id == item.id) {
         notes.splice(index, 1);
       }
       let jsonNote = JSON.stringify(notes);
